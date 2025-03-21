@@ -62,7 +62,8 @@ class YinYangBase64:
         
         for i in range(blocks):
             final_block = i == blocks - 1
-            pad2 = pad1 = False
+            pad1 = False
+            pad2 = False
             if final_block:
                 pad2 = padding == 2
                 pad1 = padding > 0
@@ -70,8 +71,8 @@ class YinYangBase64:
             index = i * 4
             temp1 = YinYangBase64.__BASE64CHARS__.index(string[index])
             temp2 = YinYangBase64.__BASE64CHARS__.index(string[index + 1])
-            temp3 = YinYangBase64.__BASE64CHARS__.index(string[index + 2])
-            temp4 = YinYangBase64.__BASE64CHARS__.index(string[index + 3])
+            temp3 = 63 if pad2 else YinYangBase64.__BASE64CHARS__.index(string[index + 2])
+            temp4 = 63 if pad1 else YinYangBase64.__BASE64CHARS__.index(string[index + 3])
             
             b1 = (temp1 << 2) + ((temp2 & 0x30) >> 4)
             b2 = ((temp2 & 0x0F) << 4) + ((temp3 & 0x3C) >> 2)

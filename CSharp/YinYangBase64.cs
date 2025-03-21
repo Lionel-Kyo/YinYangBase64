@@ -101,20 +101,12 @@ namespace YinYang
                 int index = i * 4;
                 byte temp1 = (byte)Base64Chars.IndexOf(str[index]);
                 byte temp2 = (byte)Base64Chars.IndexOf(str[index + 1]);
-                byte temp3 = (byte)Base64Chars.IndexOf(str[index + 2]);
-                byte temp4 = (byte)Base64Chars.IndexOf(str[index + 3]);
+                byte temp3 = pad2 ? (byte)63 : (byte)Base64Chars.IndexOf(str[index + 2]);
+                byte temp4 = pad1 ? (byte)63 : (byte)Base64Chars.IndexOf(str[index + 3]);
 
-                byte b = (byte)(temp1 << 2);
-                byte b1 = (byte)((temp2 & 0x30) >> 4);
-                b1 += b;
-
-                b = (byte)((temp2 & 0x0F) << 4);
-                byte b2 = (byte)((temp3 & 0x3C) >> 2);
-                b2 += b;
-
-                b = (byte)((temp3 & 0x03) << 6);
-                byte b3 = temp4;
-                b3 += b;
+                byte b1 = (byte)((byte)(temp1 << 2) + (byte)((temp2 & 0x30) >> 4));
+                byte b2 = (byte)((byte)((temp2 & 0x0F) << 4) + (byte)((temp3 & 0x3C) >> 2));
+                byte b3 = (byte)((byte)((temp3 & 0x03) << 6) + (byte)temp4);
 
                 index = i * 3;
                 data[index] = b1;
