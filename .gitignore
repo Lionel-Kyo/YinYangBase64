@@ -1,0 +1,18 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Distribution / Packaging
+*.egg
+*.egg-info/
+dist/
+build/
+*.whl
+
+# PyInstaller
+*.spec
+
+# IDE files
+.vscode/
+.idea/
+*.swp

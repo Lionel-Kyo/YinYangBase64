@@ -1,6 +1,6 @@
 # YinYang-Base64
 
-Base64 but Kanji(Yinyang) characters.
+Base64 but Kanji (Yinyang) characters.
 
 Base64 (YinYang) uses the following characters:
 ```
@@ -24,6 +24,28 @@ Base64 (RFC 4648) padding characters:
 =
 ==
 ```
+
+## Python
+
+Install:
+```
+pip install yinyang-base64
+```
+
+Usage:
+```
+import yinyang_base64
+
+# Convert bytes to base64 string
+utf8_bytes = "Hello World".encode("utf-8")
+base64_str = yinyang_base64.get_str(utf8_bytes)
+print(base64_str)
+
+# Convert base64 string back to bytes
+utf8_bytes = yinyang_base64.get_bytes(base64_str)
+print(utf8_bytes)
+```
+
 
 ## YinYang (陰陽)
 
