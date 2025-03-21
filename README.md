@@ -26,6 +26,7 @@ Base64 (RFC 4648) padding characters:
 ```
 
 ## YinYang (陰陽)
+
 A dualistic concept describing how seemingly opposite forces are interconnected and interdependent.
 
 Yīn/Yam1 (陰): Represents darkness, femininity, cold, passivity, and the moon.
@@ -46,19 +47,30 @@ Each stem is associated with an element from the Five Elements (五行, Ng5 Hang
 A system of twelve characters used in the Chinese calendar, astrology, and zodiac system.
 
 The twelve branches correspond to the Chinese zodiac animals:
+
 子(Ji2) – Rat, 丑(Chau2) – Ox, 寅(Yan4) – Tiger, 卯(Maau5) – Rabbit, 辰(San4) – Dragon, 巳(Ji6) – Snake, 午(Ng5) – Horse, 未(Mei6) – Goat, 申(San1) – Monkey, 酉(Yau5) – Rooster, 戌(Seut1) – Dog, 亥(Hoi6) – Pig.
 
 Each branch is also linked to an element from the Five Elements and has a Yīn or Yáng attribute.
 
 ### 五行 (Ng5 Hang4) – The Five Elements
+
 A system that describes interactions between elements in nature, used in feng shui, traditional Chinese medicine, astrology, and martial arts.
+
 The five elements are:
+
 Metal (金, Gam1) – Strength, structure
+
 Wood (木, Muk6) – Growth, vitality
+
 Water (水, Seui2) – Flexibility, wisdom
+
 Fire (火, Fo2) – Energy, transformation
+
 Earth (土, Tou2) – Stability, nourishment
 
+
 The elements interact in two main cycles:
+
 Generating (生, Sang1) cycle: Wood => Fire => Earth => Metal => Water => Wood.
+
 Overcoming (剋, Hak1) cycle: Wood <= Earth <= Water <= Fire <= Metal <= Wood.
