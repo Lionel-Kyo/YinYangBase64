@@ -30,6 +30,7 @@ Base64 (RFC 4648) padding characters:
 A dualistic concept describing how seemingly opposite forces are interconnected and interdependent.
 
 Yīn/Yam1 (陰): Represents darkness, femininity, cold, passivity, and the moon.
+
 Yáng/Yeung4 (陽): Represents light, masculinity, heat, activity, and the sun.
 
 Everything in the universe contains both Yīn and Yáng, and they constantly interact to maintain balance.
