@@ -4,8 +4,8 @@ namespace YinYang
     public class Base64
     {
         // Removed repeat characters
-        // 陰陽天干地支五行金木水火土甲乙丙丁戊己庚辛壬癸子丑寅卯辰巳午未申酉戌亥立春驚蟄清明立夏芒種小暑立秋白露寒露立冬大雪小寒雨水春分穀雨小滿夏至大暑處暑秋分霜降小雪冬至大寒沖剋歲
-        private static readonly string Base64Chars = "陰陽天干地支五行金木水火土甲乙丙丁戊己庚辛壬癸子丑寅卯辰巳午未申酉戌亥立春驚蟄清明夏芒種小暑秋白露寒冬大雪雨分穀滿至處霜降沖剋歲";
+        // 陰陽天干地支五行金木水火土甲乙丙丁戊己庚辛壬癸子丑寅卯辰巳午未申酉戌亥立春驚蟄清明立夏芒種小暑立秋白露寒露立冬大雪小寒雨水春分穀雨小滿夏至大暑處暑秋分霜降小雪冬至大寒生剋沖
+        private static readonly string Base64Chars = "陰陽天干地支五行金木水火土甲乙丙丁戊己庚辛壬癸子丑寅卯辰巳午未申酉戌亥立春驚蟄清明夏芒種小暑秋白露寒冬大雪雨分穀滿至處霜降生剋沖";
         private static readonly string SinglePad = "宮";
         private static readonly string DoublePad = "星宿";
 
