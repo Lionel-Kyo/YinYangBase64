@@ -18,7 +18,7 @@ namespace YinYang
 
         static uint8_t FindBase64Chars(wchar_t c) 
         {
-            for (int i = 0; i < 64; i++) 
+            for (uint8_t i = 0; i < 64; i++) 
             {
                 if (Base64Chars[i] == c)
                     return i;
@@ -33,7 +33,8 @@ namespace YinYang
                 return L"";
 
             size_t padding = length % 3;
-            if (padding > 0) padding = 3 - padding;
+            if (padding > 0) 
+                padding = 3 - padding;
             size_t blocks = (length - 1) / 3 + 1;
 
             std::wstring s;
@@ -42,7 +43,8 @@ namespace YinYang
             for (size_t i = 0; i < blocks; i++)
             {
                 bool finalBlock = i == blocks - 1;
-                bool pad2 = false, pad1 = false;
+                bool pad2 = false;
+                bool pad1 = false;
                 if (finalBlock)
                 {
                     pad2 = padding == 2;
@@ -110,8 +112,8 @@ namespace YinYang
                 size_t index = i * 4;
                 uint8_t temp1 = FindBase64Chars(wstr[index]);
                 uint8_t temp2 = FindBase64Chars(wstr[index + 1]);
-                uint8_t temp3 = pad2 ? (uint8_t)63 : FindBase64Chars(wstr[index + 2]);
-                uint8_t temp4 = pad1 ? (uint8_t)63 : FindBase64Chars(wstr[index + 3]);
+                uint8_t temp3 = pad2 ? (uint8_t)0 : FindBase64Chars(wstr[index + 2]);
+                uint8_t temp4 = pad1 ? (uint8_t)0 : FindBase64Chars(wstr[index + 3]);
 
                 uint8_t b1 = (uint8_t)(temp1 << 2) + (uint8_t)((temp2 & 0x30) >> 4);
                 uint8_t b2 = (uint8_t)((temp2 & 0x0F) << 4) + (uint8_t)((temp3 & 0x3C) >> 2);
