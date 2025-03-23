@@ -68,8 +68,8 @@ def get_bytes(string: str) -> bytes:
         index = i * 4
         temp1 = __BASE64CHARS__.index(string[index])
         temp2 = __BASE64CHARS__.index(string[index + 1])
-        temp3 = 63 if pad2 else __BASE64CHARS__.index(string[index + 2])
-        temp4 = 63 if pad1 else __BASE64CHARS__.index(string[index + 3])
+        temp3 = 0 if pad2 else __BASE64CHARS__.index(string[index + 2])
+        temp4 = 0 if pad1 else __BASE64CHARS__.index(string[index + 3])
         
         b1 = (temp1 << 2) + ((temp2 & 0x30) >> 4)
         b2 = ((temp2 & 0x0F) << 4) + ((temp3 & 0x3C) >> 2)

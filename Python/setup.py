@@ -5,7 +5,9 @@ with open("../README.md", "r", encoding="utf-8") as f:
 
 setup(
     name="yinyang_base64",
-    version="0.0.2",
+    version="1.0.0",
+    license="MIT",
+    url="https://github.com/Lionel-Kyo/YinYangBase64",
     python_requires=">= 3.9", # typing support
     packages=find_packages(),
     install_requires=[],
