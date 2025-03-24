@@ -103,6 +103,8 @@ namespace YinYang
                 byte temp2 = (byte)Base64Chars.IndexOf(str[index + 1]);
                 byte temp3 = pad2 ? (byte)0 : (byte)Base64Chars.IndexOf(str[index + 2]);
                 byte temp4 = pad1 ? (byte)0 : (byte)Base64Chars.IndexOf(str[index + 3]);
+                if (temp1 == 255 || temp2 == 255 || temp3 == 255 || temp4 == 255)
+                    throw new IndexOutOfRangeException("Invalid base64 character.");
 
                 byte b1 = (byte)((byte)(temp1 << 2) + (byte)((temp2 & 0x30) >> 4));
                 byte b2 = (byte)((byte)((temp2 & 0x0F) << 4) + (byte)((temp3 & 0x3C) >> 2));
