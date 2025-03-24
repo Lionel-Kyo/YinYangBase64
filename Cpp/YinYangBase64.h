@@ -16,9 +16,9 @@ namespace YinYang
         static constexpr wchar_t SinglePad[] = L"宮";
         static constexpr wchar_t DoublePad[] = L"星宿";
 
-        static uint8_t FindBase64Chars(wchar_t c) 
+        static uint8_t IndexOfBase64Chars(wchar_t c) 
         {
-            for (uint8_t i = 0; i < 64; i++) 
+            for (uint8_t i = 0; i < 64; i++)
             {
                 if (Base64Chars[i] == c)
                     return i;
@@ -110,10 +110,12 @@ namespace YinYang
                 }
 
                 size_t index = i * 4;
-                uint8_t temp1 = FindBase64Chars(wstr[index]);
-                uint8_t temp2 = FindBase64Chars(wstr[index + 1]);
-                uint8_t temp3 = pad2 ? (uint8_t)0 : FindBase64Chars(wstr[index + 2]);
-                uint8_t temp4 = pad1 ? (uint8_t)0 : FindBase64Chars(wstr[index + 3]);
+                uint8_t temp1 = IndexOfBase64Chars(wstr[index]);
+                uint8_t temp2 = IndexOfBase64Chars(wstr[index + 1]);
+                uint8_t temp3 = pad2 ? (uint8_t)0 : IndexOfBase64Chars(wstr[index + 2]);
+                uint8_t temp4 = pad1 ? (uint8_t)0 : IndexOfBase64Chars(wstr[index + 3]);
+                if (temp1 == 255 || temp2 == 255 || temp3 == 255 || temp4 == 255) 
+                    throw std::runtime_error("Invalid base64 character.");
 
                 uint8_t b1 = (uint8_t)(temp1 << 2) + (uint8_t)((temp2 & 0x30) >> 4);
                 uint8_t b2 = (uint8_t)((temp2 & 0x0F) << 4) + (uint8_t)((temp3 & 0x3C) >> 2);
